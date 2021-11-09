@@ -11,28 +11,7 @@ const publicKey = 'BJxLKs-EcVJpc1DedVAgYoCU0w81CBfASXCBB9hZgSjriF9z23VYPonv86x-7
 const privateKey = 'u1azylDDg8lcSte9uMuvJfOXqpFVSpVmpdu0-PhKcR8';
 webpush.setVapidDetails('mailto:example@yourdomain.org', publicKey, privateKey);
 
-mongoose.connect("mongodb://localhost:27017/notif-devices", {
-  useUnifiedTopology: true,
-  useNewUrlParser: true
-});
-var db = mongoose.connection;
-db.on("error", console.error.bind(console, "connection error:"));
 
-db.once("open", function() {
-  console.log("Connection Successful!");
-});
-var schema = mongoose.Schema({
-    name: String,
-    age: Number
-  });
-var Model = mongoose.model("model", schema, "myCollection");
-
-var doc1 = new Model({ name: "John", age: 21 });
-
-doc1.delete(function(err, doc) {
-  if (err) return console.error(err);
-  console.log("Document inserted succussfully!");
-});
 const app = express();
 var corsOptions = {
     origin: 'https://qazaljalilian.github.io',
