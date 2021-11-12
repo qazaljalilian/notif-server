@@ -30,9 +30,8 @@ app.use(function (request, response, next) {
 });
 const notificationPayload = {
   "notification": {
-      "title": "Angular News",
-      "body": "Newsletter Available!",
-      "icon": "assets/main-page-logo-small-hat.png",
+      "title": "Qazal did it!!!",
+      "body": "welcome to Palette! you are being honored to see the very first notifications!",
       "vibrate": [100, 50, 100],
       "data": {
           "dateOfArrival": Date.now(),
