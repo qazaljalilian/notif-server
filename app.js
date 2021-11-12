@@ -46,9 +46,11 @@ const notificationPayload = {
 }
 app.post('/subscribe',  cors() ,jsonParser, (req, res) => {
     console.log(req.body);
-   
+   setTimeout(() => {
     webpush.sendNotification(
       req.body, JSON.stringify(notificationPayload) )
+   }, 3000);
+ 
     res.status(201).json({})
 })
 notification =  {
