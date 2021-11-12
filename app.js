@@ -23,6 +23,10 @@ app.listen(4000, () => console.log(`The server is listening on port ${4000}`))
 app.use(function (request, response, next) {
   response.header("Access-Control-Allow-Origin", "https://qazaljalilian.github.io/");
   response.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+  header = req.header
+  header.Add("Access-Control-Allow-Origin", "*")
+  header.Add("Access-Control-Allow-Methods", "DELETE, POST, GET, OPTIONS")
+  header.Add("Access-Control-Allow-Headers", "Content-Type, Access-Control-Allow-Headers, Authorization, X-Requested-With")
   next();
 });
 const notificationPayload = {
@@ -43,10 +47,7 @@ const notificationPayload = {
 }
 app.post('/subscribe',  cors() ,jsonParser, (req, res) => {
     console.log(req.body);
-    header = req.headers
-header.Add("Access-Control-Allow-Origin", "*")
-header.Add("Access-Control-Allow-Methods", "DELETE, POST, GET, OPTIONS")
-header.Add("Access-Control-Allow-Headers", "Content-Type, Access-Control-Allow-Headers, Authorization, X-Requested-With")
+   
     webpush.sendNotification(
       req.body, JSON.stringify(notificationPayload) )
     res.status(201).json({})
