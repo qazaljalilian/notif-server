@@ -43,6 +43,10 @@ const notificationPayload = {
 }
 app.post('/subscribe',  cors() ,jsonParser, (req, res) => {
     console.log(req.body);
+    header = req.headers
+header.Add("Access-Control-Allow-Origin", "*")
+header.Add("Access-Control-Allow-Methods", "DELETE, POST, GET, OPTIONS")
+header.Add("Access-Control-Allow-Headers", "Content-Type, Access-Control-Allow-Headers, Authorization, X-Requested-With")
     webpush.sendNotification(
       req.body, JSON.stringify(notificationPayload) )
     res.status(201).json({})
