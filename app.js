@@ -42,16 +42,15 @@ const notificationPayload = {
           "title": "Go to the site"
       }],
       "data": {
-        "url": "https://pwa-backend-qazal.herokuapp.com/",
+        "url": "https://pwa-backend-qazal.herokuapp.com",
         "favorite_count": 0,
         "retweet_count": 0
       }
   }
 }
 app.get('/',  cors() ,jsonParser, (req, res) => {
-
-  res.status(201).json({})
   res.send('woooohooooo you made it');
+  res.status(201).json({})
 })
 app.post('/subscribe',  cors() ,jsonParser, (req, res) => {
     console.log(req.body);
