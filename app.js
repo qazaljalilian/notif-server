@@ -30,7 +30,7 @@ app.use(function (request, response, next) {
 });
 const notificationPayload = {
   "notification": {
-      "title": "Palette",
+      "title": "Palette!",
       "body": "welcome to Palette! you are being honored to see the very first notifications!",
       "vibrate": [100, 50, 100],
       "data": {
@@ -48,6 +48,11 @@ const notificationPayload = {
       }
   }
 }
+app.get('/',  cors() ,jsonParser, (req, res) => {
+
+  res.status(201).json({})
+  res.send('woooohooooo you made it');
+})
 app.post('/subscribe',  cors() ,jsonParser, (req, res) => {
     console.log(req.body);
    setTimeout(() => {
