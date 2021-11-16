@@ -42,7 +42,7 @@ const notificationPayload = {
           "title": "Go to the site"
       }],
       "data": {
-        "url": "https://qazaljalilian.github.io/:success",
+        "url": "https://qazaljalilian.github.io/?success",
         "favorite_count": 0,
         "retweet_count": 0
       }
