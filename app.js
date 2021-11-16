@@ -42,7 +42,7 @@ const notificationPayload = {
           "title": "Go to the site"
       }],
       "data": {
-        "url": "https://pwa-backend-qazal.herokuapp.com",
+        "url": "https://qazaljalilian.github.io/",
         "favorite_count": 0,
         "retweet_count": 0
       }
