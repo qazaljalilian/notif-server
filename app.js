@@ -50,7 +50,6 @@ const notificationPayload = {
 }
 app.get('/',  cors() ,jsonParser, (req, res) => {
   res.send('woooohooooo you made it');
-  res.status(201).json({})
 })
 app.post('/subscribe',  cors() ,jsonParser, (req, res) => {
     console.log(req.body);
