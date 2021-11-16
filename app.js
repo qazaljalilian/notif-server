@@ -30,7 +30,7 @@ app.use(function (request, response, next) {
 });
 const notificationPayload = {
   "notification": {
-      "title": "Qazal did it!!!",
+      "title": "Palette",
       "body": "welcome to Palette! you are being honored to see the very first notifications!",
       "vibrate": [100, 50, 100],
       "data": {
