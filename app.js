@@ -31,7 +31,7 @@ app.use(function (request, response, next) {
 const notificationPayload = {
   "notification": {
       "title": "Palette!",
-      "body": "welcome to Palette! you are being honored to see the very first notifications!",
+      "body": "welcome to Palette! you are being honored to see the very first notification!",
       "vibrate": [100, 50, 100],
       "data": {
           "dateOfArrival": Date.now(),
