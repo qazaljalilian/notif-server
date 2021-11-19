@@ -1,22 +1,16 @@
 const webpush = require('web-push');
-var mongoose = require("mongoose");
 const express = require('express');
-var bodyParser = require('body-parser')
-const path = require('path');
+var bodyParser = require('body-parser');
 var cors = require('cors')
-var jsonParser = bodyParser.json()
+var jsonParser = bodyParser.json();
 
 
 const publicKey = 'BJxLKs-EcVJpc1DedVAgYoCU0w81CBfASXCBB9hZgSjriF9z23VYPonv86x-7vqIckaUcOSqVT42RBfcG3bJp-Y'
 const privateKey = 'u1azylDDg8lcSte9uMuvJfOXqpFVSpVmpdu0-PhKcR8';
-webpush.setVapidDetails('mailto:example@yourdomain.org', publicKey, privateKey);
+webpush.setVapidDetails('mailto:qazal.jalilian@palettesoftware.com', publicKey, privateKey);
 
 
 const app = express();
-var corsOptions = {
-    origin: 'https://qazaljalilian.github.io',
-    optionsSuccessStatus: 200 // some legacy browsers (IE11, various SmartTVs) choke on 204
-  }
 app.use(cors())
 app.options('*', cors());
 const server = app.listen(process.env.PORT || 5000, () => {
@@ -38,8 +32,8 @@ const notificationPayload = {
           "primaryKey": 1
       },
       "actions": [{
-          "action": "explore",
-          "title": "Go to the site"
+          "action": "open",
+          "title": "Open the app"
       }],
       "data": {
         "url": "https://qazaljalilian.github.io/?success",
@@ -60,7 +54,4 @@ app.post('/subscribe',  cors() ,jsonParser, (req, res) => {
  
     res.status(201).json({})
 })
-notification =  {
-  title: "Your pizza is on the way!",
-  body: "Hold tight. We will let you know when your delivery driver is nearby."
-}
+
